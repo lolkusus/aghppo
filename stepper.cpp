@@ -1,10 +1,9 @@
 #include "stepper.h"
-#include "led.h"
 
 enum Step{LEFT,RIGHT};
 
-void Stepper::SetMode(unsigned char ucInvertionMode){
-	ucInversion = ucInvertionMode;
+void Stepper::SetLed(Led *MyLedObject){
+	pMyLed = MyLedObject;
 }
 
 void Stepper::Step(enum Step eStep){
@@ -17,10 +16,7 @@ void Stepper::Step(enum Step eStep){
 		LedCtr = LedCtr % 4;
 	}else{
 	}
-	if(ucInversion == 1)
-		MyLedInv.On(LedCtr);
-	else
-		MyLed.On(LedCtr);
+		pMyLed->On(LedCtr);
 }
 
 void Stepper::StepLeft(void){

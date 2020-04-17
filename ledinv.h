@@ -4,7 +4,7 @@
 
 class LedInv : public Led{
 	public:
-		void On(unsigned char ucLedIndex);
+		virtual void On(unsigned char ucLedIndex);
 };
 
 #endif

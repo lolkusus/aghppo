@@ -5,13 +5,11 @@
 
 class Stepper{
 	public:
-		void SetMode(unsigned char ucInvertionMode);
+		void SetLed(Led *MyLedObject);
 		void StepLeft(void);
 		void StepRight(void);
 	private:
-		Led MyLed;
-		LedInv MyLedInv;
-		unsigned char ucInversion;
+		Led *pMyLed;
 		unsigned char LedCtr;
 		void Step(enum Step eStep);
 };

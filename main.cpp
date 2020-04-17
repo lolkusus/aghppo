@@ -3,6 +3,8 @@
 
 Stepper MyStepper;
 Keyboard MyKeyboard;
+Led	MyLed;
+LedInv	MyLedInv;
 
 void Delay(int iTimeInMs){
 	int iCycle;
@@ -17,11 +19,11 @@ int main(void)
 
 	if (MyKeyboard.eRead() == BUTTON_4)
 	{
-		MyStepper.SetMode(1);
+		MyStepper.SetLed(&MyLedInv);
 	}
 	else
 	{
-		MyStepper.SetMode(0);
+		MyStepper.SetLed(&MyLed);
 	}
 	
 	while(1){
