@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Kolokwium.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Kolokwium.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 17 19:12:31 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 17 19:28:28 2020
 <BR><P>
 <H3>Maximum Stack Usage =         24 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; Stepper::StepLeft() &rArr; Stepper::Step(Step)
+main &rArr; Stepper::StepRight() &rArr; Stepper::Step(Step)
 <P>
 <H3>
 Functions with no stack information
@@ -188,50 +188,40 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[14]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[20]"></a>Led::Led()</STRONG> (ARM, 32 bytes, Stack size 0 bytes, led.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Stepper(unsigned char)
+<P><STRONG><a name="[21]"></a>Led::Led()</STRONG> (ARM, 32 bytes, Stack size 0 bytes, led.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___8_main_cpp
 </UL>
 
 <P><STRONG><a name="[49]"></a>Led::Led__sub_object()</STRONG> (ARM, 0 bytes, Stack size 0 bytes, led.o(.text), UNUSED)
 
-<P><STRONG><a name="[21]"></a>Led::On(unsigned char)</STRONG> (ARM, 144 bytes, Stack size 0 bytes, led.o(.text))
+<P><STRONG><a name="[23]"></a>Led::On(unsigned char)</STRONG> (ARM, 144 bytes, Stack size 0 bytes, led.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Step(Step)
-<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Stepper(unsigned char)
 </UL>
 
 <P><STRONG><a name="[1d]"></a>Delay(int)</STRONG> (ARM, 32 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a]"></a>main</STRONG> (ARM, 24 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = main &rArr; Stepper::StepLeft() &rArr; Stepper::Step(Step)
+<P><STRONG><a name="[a]"></a>main</STRONG> (ARM, 92 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = main &rArr; Stepper::StepRight() &rArr; Stepper::Step(Step)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepLeft()
+<BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keyboard::eRead()
+<LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepRight()
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepLeft()
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay(int)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
 </UL>
-<P><STRONG><a name="[1f]"></a>Stepper::Stepper(unsigned char)</STRONG> (ARM, 64 bytes, Stack size 16 bytes, stepper.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Stepper::Stepper(unsigned char)
-</UL>
-<BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::On(unsigned char)
-<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::Led()
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__sti___8_main_cpp
-</UL>
-
-<P><STRONG><a name="[4a]"></a>Stepper::Stepper__sub_object(unsigned char)</STRONG> (ARM, 0 bytes, Stack size 16 bytes, stepper.o(.text), UNUSED)
-
 <P><STRONG><a name="[22]"></a>Stepper::Step(Step)</STRONG> (ARM, 124 bytes, Stack size 16 bytes, stepper.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Stepper::Step(Step)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::On(unsigned char)
+<BR>[Calls]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::On(unsigned char)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[23]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepRight()
-<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepLeft()
+<BR>[Called By]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepRight()
+<LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepLeft()
 </UL>
 
-<P><STRONG><a name="[1e]"></a>Stepper::StepLeft()</STRONG> (ARM, 28 bytes, Stack size 8 bytes, stepper.o(.text))
+<P><STRONG><a name="[20]"></a>Stepper::StepLeft()</STRONG> (ARM, 28 bytes, Stack size 8 bytes, stepper.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Stepper::StepLeft() &rArr; Stepper::Step(Step)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Step(Step)
@@ -239,8 +229,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[23]"></a>Stepper::StepRight()</STRONG> (ARM, 28 bytes, Stack size 8 bytes, stepper.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Step(Step)
+<P><STRONG><a name="[1f]"></a>Stepper::StepRight()</STRONG> (ARM, 28 bytes, Stack size 8 bytes, stepper.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Stepper::StepRight() &rArr; Stepper::Step(Step)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Step(Step)
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[4a]"></a>Keyboard::Init()</STRONG> (ARM, 24 bytes, Stack size 0 bytes, keyboard.o(.text), UNUSED)
+
+<P><STRONG><a name="[1e]"></a>Keyboard::eRead()</STRONG> (ARM, 108 bytes, Stack size 0 bytes, keyboard.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[4b]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -341,10 +341,10 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
 </UL>
-<P><STRONG><a name="[b]"></a>__sti___8_main_cpp</STRONG> (ARM, 24 bytes, Stack size 8 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __sti___8_main_cpp &rArr; Stepper::Stepper(unsigned char)
+<P><STRONG><a name="[b]"></a>__sti___8_main_cpp</STRONG> (ARM, 40 bytes, Stack size 8 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __sti___8_main_cpp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Stepper(unsigned char)
+<BR>[Calls]<UL><LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led::Led()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(.init_array)
 </UL><P>

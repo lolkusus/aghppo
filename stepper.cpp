@@ -3,11 +3,6 @@
 
 enum Step{LEFT,RIGHT};
 
-Stepper::Stepper(unsigned char ucInitState){
-	LedCtr = ucInitState;
-	MyLed.On(LedCtr);
-}
-
 void Stepper::Step(enum Step eStep){
 	if(eStep == LEFT){
 		LedCtr--;

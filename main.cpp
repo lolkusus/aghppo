@@ -1,6 +1,8 @@
 #include "stepper.h"
+#include "keyboard.h"
 
 Stepper MyStepper;
+Keyboard MyKeyboard;
 
 void Delay(int iTimeInMs){
 	int iCycle;
@@ -11,8 +13,22 @@ void Delay(int iTimeInMs){
 
 int main(void)
 {
+	KeyboardState eKeyboardState;
 	while(1){
 		Delay(500);
-		MyStepper.StepLeft();
+		eKeyboardState = MyKeyboard.eRead();
+		switch(eKeyboardState)
+		{
+			case(BUTTON_1):
+				MyStepper.StepRight();
+			break;
+			
+			case(BUTTON_2):
+				MyStepper.StepLeft();
+			break;
+			
+			default:
+			break;
+		}
 	}
 }

@@ -3,6 +3,7 @@
 ".\led.o"
 ".\main.o"
 ".\stepper.o"
+".\keyboard.o"
 --strict --scatter ".\Kolokwium.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
