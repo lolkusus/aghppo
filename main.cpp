@@ -1,5 +1,4 @@
 #include "led.h"
-#include <stdio.h>
 
 void Delay(int iTimeInMs){
 	int iCycle;

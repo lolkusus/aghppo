@@ -7,7 +7,7 @@ class Led {
 		void StepLeft(void);
 		void StepRight(void);
 	private:
-		unsigned char ucLedIndexStep;
+		unsigned char LedCtr;
 		void On(unsigned char ucLedIndex);
 		void Step(enum Step eStep);
 };

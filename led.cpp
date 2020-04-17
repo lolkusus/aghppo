@@ -12,7 +12,7 @@ void Led::Init(void)
 {
 	IO1DIR = IO1DIR | LED0_bm | LED1_bm | LED2_bm | LED3_bm;
 	IO1SET = LED0_bm;
-	ucLedIndexStep = 0;
+	LedCtr = 0;
 }	
 
 void Led::On(unsigned char ucLedIndex)
@@ -39,15 +39,15 @@ void Led::On(unsigned char ucLedIndex)
 
 void Led::Step(enum Step eStep){
 	if(eStep == LEFT){
-		ucLedIndexStep--;
-		ucLedIndexStep = ucLedIndexStep % 4;
+		LedCtr--;
+		LedCtr = LedCtr % 4;
 	}
 	else if(eStep == RIGHT){
-		ucLedIndexStep++;
-		ucLedIndexStep = ucLedIndexStep % 4;
+		LedCtr++;
+		LedCtr = LedCtr % 4;
 	}else{
 	}
-	On(ucLedIndexStep);
+	On(LedCtr);
 }
 
 void Led::StepLeft(void){
