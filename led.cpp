@@ -6,13 +6,10 @@
 #define LED2_bm (1<<18)
 #define LED3_bm (1<<19)
 
-enum Step{LEFT,RIGHT};
-
 void Led::Init(void)
 {
 	IO1DIR = IO1DIR | LED0_bm | LED1_bm | LED2_bm | LED3_bm;
 	IO1SET = LED0_bm;
-	LedCtr = 0;
 }	
 
 void Led::On(unsigned char ucLedIndex)
@@ -36,24 +33,3 @@ void Led::On(unsigned char ucLedIndex)
 		break;		
 	}
 }	
-
-void Led::Step(enum Step eStep){
-	if(eStep == LEFT){
-		LedCtr--;
-		LedCtr = LedCtr % 4;
-	}
-	else if(eStep == RIGHT){
-		LedCtr++;
-		LedCtr = LedCtr % 4;
-	}else{
-	}
-	On(LedCtr);
-}
-
-void Led::StepLeft(void){
-	Step(LEFT);
-}
-
-void Led::StepRight(void){
-	Step(RIGHT);
-}
