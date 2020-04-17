@@ -427,6 +427,16 @@
               <FileType>5</FileType>
               <FilePath>.\keyboard.h</FilePath>
             </File>
+            <File>
+              <FileName>LedInv.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\LedInv.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ledinv.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ledinv.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

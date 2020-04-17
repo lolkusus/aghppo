@@ -1,6 +1,8 @@
 #include "stepper.h"
 #include "led.h"
 
+extern unsigned char ucInversion;
+
 enum Step{LEFT,RIGHT};
 
 void Stepper::Step(enum Step eStep){
@@ -13,7 +15,10 @@ void Stepper::Step(enum Step eStep){
 		LedCtr = LedCtr % 4;
 	}else{
 	}
-	MyLed.On(LedCtr);
+	if(ucInversion == 1)
+		MyLedInv.On(LedCtr);
+	else
+		MyLed.On(LedCtr);
 }
 
 void Stepper::StepLeft(void){

@@ -1,7 +1,7 @@
 #ifndef LED_H
 #define LED_H
 
-class Led {
+class Led{
 	public:
 		Led();
 		void On(unsigned char ucLedIndex);

@@ -1,14 +1,21 @@
 Dependencies for Project 'Kolokwium', Target 'Target 1': (DO NOT MODIFY !)
 F (.\Startup.s)(0x51C80D6E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
-F (.\led.cpp)(0x5E99DB9E)()
+F (.\led.cpp)(0x5E99EF48)()
 I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C80D9C)
 I (C:\Users\lolkusus\Documents\ppo\aghppo\led.h)(0x5E99E2CB)
-F (.\led.h)(0x5E99E2CB)()
-F (.\main.cpp)(0x5E99E116)()
-I (C:\Users\lolkusus\Documents\ppo\aghppo\stepper.h)(0x5E99E4ED)
+F (.\led.h)(0x5E99EFFA)()
+F (.\main.cpp)(0x5E99ECBF)()
+I (C:\Users\lolkusus\Documents\ppo\aghppo\stepper.h)(0x5E99EF2C)
 I (C:\Users\lolkusus\Documents\ppo\aghppo\led.h)(0x5E99E2CB)
+I (C:\Users\lolkusus\Documents\ppo\aghppo\ledinv.h)(0x5E99EFD4)
+I (C:\Users\lolkusus\Documents\ppo\aghppo\keyboard.h)(0x5E99E5E1)
 F (.\stepper.cpp)(0x5E99E4ED)(--cpp -c --cpu ARM7TDMI -D__EVAL -g -O0 --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips-o .\stepper.o --omf_browse .\stepper.crf --depend .\stepper.d)
-I (C:\Users\lolkusus\Documents\ppo\aghppo\stepper.h)(0x5E99E4ED)
+I (C:\Users\lolkusus\Documents\ppo\aghppo\stepper.h)(0x5E99EF2C)
 I (C:\Users\lolkusus\Documents\ppo\aghppo\led.h)(0x5E99E2CB)
-F (.\keyboard.cpp)(0x58B03C7B)()
-F (.\keyboard.h)(0x58B03C9A)()
+I (C:\Users\lolkusus\Documents\ppo\aghppo\ledinv.h)(0x5E99EFD4)
+F (.\keyboard.cpp)(0x5E99E571)()
+I (C:\Keil\ARM\Inc\Philips\LPC21xx.H)(0x51C80D9C)
+I (C:\Users\lolkusus\Documents\ppo\aghppo\Keyboard.h)(0x5E99E5E1)
+F (.\keyboard.h)(0x5E99E5E1)()
+F (.\LedInv.cpp)(0x5E99EFAA)()
+F (.\ledinv.h)(0x5E99EFD4)()
