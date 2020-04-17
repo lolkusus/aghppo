@@ -1,9 +1,11 @@
 #include "stepper.h"
 #include "led.h"
 
-extern unsigned char ucInversion;
-
 enum Step{LEFT,RIGHT};
+
+void Stepper::SetMode(unsigned char ucInvertionMode){
+	ucInversion = ucInvertionMode;
+}
 
 void Stepper::Step(enum Step eStep){
 	if(eStep == LEFT){

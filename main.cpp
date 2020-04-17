@@ -4,8 +4,6 @@
 Stepper MyStepper;
 Keyboard MyKeyboard;
 
-unsigned char ucInversion = 0;
-
 void Delay(int iTimeInMs){
 	int iCycle;
 	int iNumberOfCycles = 12000 * iTimeInMs;
@@ -19,7 +17,11 @@ int main(void)
 
 	if (MyKeyboard.eRead() == BUTTON_4)
 	{
-		ucInversion = 1;
+		MyStepper.SetMode(1);
+	}
+	else
+	{
+		MyStepper.SetMode(0);
 	}
 	
 	while(1){
