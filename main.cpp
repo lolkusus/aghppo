@@ -4,6 +4,8 @@
 Stepper MyStepper;
 Keyboard MyKeyboard;
 
+unsigned char ucInversion = 0;
+
 void Delay(int iTimeInMs){
 	int iCycle;
 	int iNumberOfCycles = 12000 * iTimeInMs;
@@ -14,6 +16,12 @@ void Delay(int iTimeInMs){
 int main(void)
 {
 	KeyboardState eKeyboardState;
+
+	if (MyKeyboard.eRead() == BUTTON_4)
+	{
+		ucInversion = 1;
+	}
+	
 	while(1){
 		Delay(500);
 		eKeyboardState = MyKeyboard.eRead();

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Kolokwium.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Kolokwium.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 17 19:28:28 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Fri Apr 17 19:52:00 2020
 <BR><P>
 <H3>Maximum Stack Usage =         24 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -194,21 +194,21 @@ Global Symbols
 
 <P><STRONG><a name="[49]"></a>Led::Led__sub_object()</STRONG> (ARM, 0 bytes, Stack size 0 bytes, led.o(.text), UNUSED)
 
-<P><STRONG><a name="[23]"></a>Led::On(unsigned char)</STRONG> (ARM, 144 bytes, Stack size 0 bytes, led.o(.text))
+<P><STRONG><a name="[23]"></a>Led::On(unsigned char)</STRONG> (ARM, 300 bytes, Stack size 0 bytes, led.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::Step(Step)
 </UL>
 
-<P><STRONG><a name="[1d]"></a>Delay(int)</STRONG> (ARM, 32 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[1e]"></a>Delay(int)</STRONG> (ARM, 32 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a]"></a>main</STRONG> (ARM, 92 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[a]"></a>main</STRONG> (ARM, 120 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = main &rArr; Stepper::StepRight() &rArr; Stepper::Step(Step)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keyboard::eRead()
+<BR>[Calls]<UL><LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Keyboard::eRead()
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepRight()
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Stepper::StepLeft()
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay(int)
+<LI><a href="#[1e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay(int)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
 </UL>
@@ -239,7 +239,7 @@ Global Symbols
 
 <P><STRONG><a name="[4a]"></a>Keyboard::Init()</STRONG> (ARM, 24 bytes, Stack size 0 bytes, keyboard.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e]"></a>Keyboard::eRead()</STRONG> (ARM, 108 bytes, Stack size 0 bytes, keyboard.o(.text))
+<P><STRONG><a name="[1d]"></a>Keyboard::eRead()</STRONG> (ARM, 108 bytes, Stack size 0 bytes, keyboard.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
