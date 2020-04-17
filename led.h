@@ -1,9 +1,15 @@
+#ifndef LED_H
+#define LED_H
 
-enum LedState {STEP_LEFT, STEP_RIGHT, LED_STOP};
+class Led {
+	public:
+		void Init(void);
+		void StepLeft(void);
+		void StepRight(void);
+	private:
+		unsigned char ucLedIndexStep;
+		void On(unsigned char ucLedIndex);
+		void Step(enum Step eStep);
+};
 
-void LedInit(void);
-void LedOn(unsigned char ucLedIndex);
-void LedStep(enum Step eStep);
-void LedStepLeft(void);
-void LedStepRight(void);
-void LedInit(void);
+#endif
