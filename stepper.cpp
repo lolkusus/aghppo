@@ -15,7 +15,7 @@ void Stepper::Step(enum Step eStep){
 		LedCtr = LedCtr % 4;
 	}else{
 	}
-	MyLed.On(LedCtr);
+	On(LedCtr);
 }
 
 void Stepper::StepLeft(void){

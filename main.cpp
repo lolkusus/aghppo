@@ -1,7 +1,5 @@
-#include "led.h"
 #include "stepper.h"
 
-Led MyLed;
 Stepper MyStepper;
 
 void Delay(int iTimeInMs){

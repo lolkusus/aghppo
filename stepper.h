@@ -1,7 +1,8 @@
 #ifndef STEPPER_H
 #define STEPPER_H
+#include "led.h"
 
-class Stepper {
+class Stepper : public Led {
 	public:
 		void StepLeft(void);
 		void StepRight(void);

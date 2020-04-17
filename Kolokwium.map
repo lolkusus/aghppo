@@ -20,7 +20,6 @@ Section Cross References
     main.o(.init_array) refers to main.o(.text) for __sti___8_main_cpp
     main.o(.init_array) refers to init_aeabi.o(.text) for __cpp_initialize__aeabi_
     stepper.o(.text) refers to led.o(.text) for Led::On(unsigned char)
-    stepper.o(.text) refers to main.o(.data) for MyLed
     stepper.o(.ARM.exidx) refers to stepper.o(.text) for .text
     __main.o(!!!main) refers to rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
     init_aeabi.o(.emb_text) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002F) for __rt_lib_init_cpp_2
@@ -271,8 +270,8 @@ Image Symbol Table
     .text                                    0x00000220   Section       32  startup.o(.text)
     .text                                    0x00000240   Section        0  led.o(.text)
     .text                                    0x000002f4   Section        0  main.o(.text)
-    __sti___8_main_cpp                       0x0000032c   ARM Code      20  main.o(.text)
-    .text                                    0x0000034c   Section        0  stepper.o(.text)
+    __sti___8_main_cpp                       0x0000032c   ARM Code      28  main.o(.text)
+    .text                                    0x00000350   Section        0  stepper.o(.text)
     .text                                    0x00000404   Section        0  heapauxi.o(.text)
     .text                                    0x0000040c   Section        0  init_aeabi.o(.text)
     .text                                    0x00000434   Section       96  sys_stackheap_outer.o(.text)
@@ -283,7 +282,7 @@ Image Symbol Table
     .text                                    0x000004b8   Section        0  sys_exit.o(.text)
     i.__ARM_common_call_via_r0               0x000004c4   Section        0  init_aeabi.o(i.__ARM_common_call_via_r0)
     .init_array                              0x000004e8   Section        4  main.o(.init_array)
-    .data                                    0x40000000   Section        2  main.o(.data)
+    .data                                    0x40000000   Section        1  main.o(.data)
     .bss                                     0x40000004   Section       96  libspace.o(.bss)
     HEAP                                     0x40000068   Section        0  startup.o(HEAP)
     STACK                                    0x40000068   Section     1160  startup.o(STACK)
@@ -379,9 +378,9 @@ Image Symbol Table
     Led::On(unsigned char)                   0x00000260   ARM Code     144  led.o(.text)
     Delay(int)                               0x000002f4   ARM Code      32  main.o(.text)
     main                                     0x00000314   ARM Code      24  main.o(.text)
-    Stepper::Step(Step)                      0x0000034c   ARM Code     124  stepper.o(.text)
-    Stepper::StepLeft()                      0x000003c8   ARM Code      28  stepper.o(.text)
-    Stepper::StepRight()                     0x000003e4   ARM Code      28  stepper.o(.text)
+    Stepper::Step(Step)                      0x00000350   ARM Code     124  stepper.o(.text)
+    Stepper::StepLeft()                      0x000003cc   ARM Code      28  stepper.o(.text)
+    Stepper::StepRight()                     0x000003e8   ARM Code      28  stepper.o(.text)
     __use_two_region_memory                  0x00000405   Thumb Code     2  heapauxi.o(.text)
     __rt_heap_escrow$2region                 0x00000407   Thumb Code     2  heapauxi.o(.text)
     __rt_heap_expand$2region                 0x00000409   Thumb Code     2  heapauxi.o(.text)
@@ -401,8 +400,7 @@ Image Symbol Table
     Region$$Table$$Limit                     0x000004e8   Number         0  anon$$obj.o(Region$$Table)
     SHT$$INIT_ARRAY$$Base                    0x000004e8   Number         0  main.o(.init_array)
     SHT$$INIT_ARRAY$$Limit                   0x000004ec   Number         0  main.o(.init_array)
-    MyLed                                    0x40000000   Data           1  main.o(.data)
-    MyStepper                                0x40000001   Data           1  main.o(.data)
+    MyStepper                                0x40000000   Data           1  main.o(.data)
     __libspace_start                         0x40000004   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x40000064   Data           0  libspace.o(.bss)
 
@@ -472,8 +470,8 @@ Memory Map of the image
     0x00000218   0x00000008   Code   RO          177    .ARM.Collect$$rtexit$$00000004  c_t.l(rtexit2.o)
     0x00000220   0x00000020   Code   RO            4    .text               startup.o
     0x00000240   0x000000b4   Code   RO           11    .text               led.o
-    0x000002f4   0x00000058   Code   RO           30    .text               main.o
-    0x0000034c   0x000000b8   Code   RO           50    .text               stepper.o
+    0x000002f4   0x0000005c   Code   RO           30    .text               main.o
+    0x00000350   0x000000b4   Code   RO           50    .text               stepper.o
     0x00000404   0x00000006   Code   RO           68    .text               c_t.l(heapauxi.o)
     0x0000040a   0x00000002   PAD
     0x0000040c   0x00000028   Code   RO           75    .text               c_t.l(init_aeabi.o)
@@ -494,8 +492,8 @@ Memory Map of the image
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x40000000   0x00000002   Data   RW           32    .data               main.o
-    0x40000002   0x00000002   PAD
+    0x40000000   0x00000001   Data   RW           32    .data               main.o
+    0x40000001   0x00000003   PAD
     0x40000004   0x00000060   Zero   RW          161    .bss                c_t.l(libspace.o)
     0x40000064   0x00000004   PAD
     0x40000068   0x00000000   Zero   RW            2    HEAP                startup.o
@@ -510,14 +508,14 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
        180          4          0          0          0       3944   led.o
-        88         12          4          2          0       1043   main.o
+        92          8          4          1          0       1037   main.o
        304         60          0          0       1160        452   startup.o
-       184          4          0          0          0       1340   stepper.o
+       180          0          0          0          0       1364   stepper.o
 
     ----------------------------------------------------------------------
-       756         80         36          4       1160       6779   Object Totals
+       756         72         36          4       1160       6797   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         0          0          0          2          0          0   (incl. Padding)
+         0          0          0          3          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -565,9 +563,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1224        108         36          4       1260       7031   Grand Totals
-      1224        108         36          4       1260       7031   ELF Image Totals
-      1224        108         36          4          0          0   ROM Totals
+      1224        100         36          4       1260       7049   Grand Totals
+      1224        100         36          4       1260       7049   ELF Image Totals
+      1224        100         36          4          0          0   ROM Totals
 
 ==============================================================================
 
