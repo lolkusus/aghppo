@@ -8,6 +8,7 @@ class Stepper : public Led {
 		void StepLeft(void);
 		void StepRight(void);
 	private:
+		Led MyLed;
 		unsigned char LedCtr;
 		void Step(enum Step eStep);
 };

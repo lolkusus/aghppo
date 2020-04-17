@@ -1,13 +1,11 @@
 #include "stepper.h"
 #include "led.h"
 
-extern Led MyLed;
-
 enum Step{LEFT,RIGHT};
 
 Stepper::Stepper(unsigned char ucInitState){
 	LedCtr = ucInitState;
-	On(LedCtr);
+	MyLed.On(LedCtr);
 }
 
 void Stepper::Step(enum Step eStep){
@@ -20,7 +18,7 @@ void Stepper::Step(enum Step eStep){
 		LedCtr = LedCtr % 4;
 	}else{
 	}
-	On(LedCtr);
+	MyLed.On(LedCtr);
 }
 
 void Stepper::StepLeft(void){
