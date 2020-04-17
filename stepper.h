@@ -2,6 +2,7 @@
 #define STEPPER_H
 #include "led.h"
 #include "ledinv.h"
+#include "ledpos.h"
 
 class Stepper{
 	public:

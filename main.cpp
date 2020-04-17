@@ -3,8 +3,8 @@
 
 Stepper MyStepper;
 Keyboard MyKeyboard;
-Led	MyLed;
 LedInv	MyLedInv;
+LedPos	MyLedPos;
 
 void Delay(int iTimeInMs){
 	int iCycle;
@@ -23,7 +23,7 @@ int main(void)
 	}
 	else
 	{
-		MyStepper.SetLed(&MyLed);
+		MyStepper.SetLed(&MyLedPos);
 	}
 	
 	while(1){

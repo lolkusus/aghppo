@@ -437,6 +437,16 @@
               <FileType>5</FileType>
               <FilePath>.\ledinv.h</FilePath>
             </File>
+            <File>
+              <FileName>ledpos.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ledpos.h</FilePath>
+            </File>
+            <File>
+              <FileName>ledpos.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\ledpos.cpp</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
